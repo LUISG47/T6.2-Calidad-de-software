@@ -1,5 +1,9 @@
+"""
+Módulo para generar el control de información del hotel
+Actividad 6.2 - Ejercicio de programación 2.
+"""
 import json
-import os
+
 
 class Hotel:
     """Clase para manejar la información de los hoteles."""
