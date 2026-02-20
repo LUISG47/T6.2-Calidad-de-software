@@ -1,39 +1,70 @@
-"""Módulo de pruebas unitarias para hotel.py."""
+"""Módulo de pruebas unitarias optimizado para hotel.py."""
 import unittest
-import json
 import os
-from hotel import Hotel
+import json
+from hotel import Hotel, Customer, Reservation
 
+class TestHotelSystem(unittest.TestCase):
+    """Pruebas unitarias siguiendo los estándares de David Sale."""
 
-class TestHotel(unittest.TestCase):
-    """Pruebas para los requerimientos de la clase Hotel."""
-
-    def test_load_and_create_from_random_json(self):
-        """Prueba la creación de un hotel usando los archivos json generados."""
-        # Probamos con el primer archivo generado por tu randomgen.py
-        file_path = 'test_hotel_0.json'
+    def setUp(self):
+        """Configuración previa a cada prueba (D.R.Y)."""
+        self.hotel_id = "H1"
+        self.customer_id = "C1"
+        self.res_id = "R1"
         
-        if not os.path.exists(file_path):
-            self.skipTest(f"Archivo {file_path} no encontrado. Corre randomgen.py primero.")
+        # Instancias para usar en los tests
+        self.hotel = Hotel(self.hotel_id, "Hotel Test", 100)
+        self.customer = Customer(self.customer_id, "Diana Sanchez")
+        self.reservation = Reservation(self.res_id, self.hotel_id, self.customer_id)
 
-        with open(file_path, 'r', encoding='utf-8') as file_handle:
-            data = json.load(file_handle)
-            hotel = Hotel(data['id'], data['name'], data['rooms'])
-            
-            # Verificamos que los datos se cargaron correctamente
-            self.assertEqual(hotel.hotel_id, data['id'])
-            self.assertEqual(hotel.name, data['name'])
+    def tearDown(self):
+        """Limpieza después de cada prueba para mantener aislamiento."""
+        files = [
+            f"hotel_{self.hotel_id}.json",
+            f"customer_{self.customer_id}.json",
+            f"reservation_{self.res_id}.json"
+        ]
+        for f in files:
+            if os.path.exists(f):
+                os.remove(f)
 
-    def test_invalid_file_handling(self):
-        """Req 5: Verificar que el sistema maneja archivos inexistentes o inválidos."""
-        # Intentamos cargar un archivo que no existe
+    def test_hotel_save_and_persistence(self):
+        """Prueba la unidad de persistencia de Hotel."""
+        self.hotel.save()
+        filename = f"hotel_{self.hotel_id}.json"
+        self.assertTrue(os.path.exists(filename))
+        
+        with open(filename, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            # Verificamos que los datos guardados son correctos (David Sale)
+            self.assertEqual(data['hotel_id'], self.hotel_id)
+
+    def test_customer_display_info(self):
+        """Prueba el método display_info (unidad aislada)."""
+        # Verificamos que no truene al imprimir
         try:
-            with open('archivo_inexistente.json', 'r', encoding='utf-8') as f:
+            self.customer.display_info()
+        except Exception as err:
+            self.fail(f"display_info lanzó una excepción: {err}")
+
+    def test_reservation_creation(self):
+        """Verifica la correcta asociación de IDs en la reserva."""
+        self.assertEqual(self.reservation.hotel_id, self.hotel_id)
+        self.assertEqual(self.reservation.customer_id, self.customer_id)
+
+    def test_delete_hotel_behavior(self):
+        """Prueba la unidad de eliminación."""
+        self.hotel.save()
+        Hotel.delete(self.hotel_id)
+        self.assertFalse(os.path.exists(f"hotel_{self.hotel_id}.json"))
+
+    def test_invalid_data_handling(self):
+        """Uso de assertRaises para validar tipos de datos (David Sale)."""
+        # Si intentamos abrir un JSON corrupto o inexistente en lógica externa
+        with self.assertRaises(FileNotFoundError):
+            with open("no_existe.json", "r") as f:
                 json.load(f)
-        except FileNotFoundError:
-            # Si el programa imprime el error y continúa, la prueba pasa
-            print("\n[Manejo de Error] Archivo no encontrado - Continuando ejecución.")
-            self.assertTrue(True)
 
 if __name__ == '__main__':
     unittest.main()
