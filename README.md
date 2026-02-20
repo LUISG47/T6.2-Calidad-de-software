@@ -3,7 +3,7 @@
 
 # Sistema de Reservaciones - Hotel Front Desk
 
-Este proyecto consiste en un sistema de gestión de reservaciones basado en consola, diseñado para demostrar la implementación de abstracciones orientadas a objetos, persistencia de datos en archivos JSON y rigurosos estándares de calidad de software mediante pruebas unitarias y análisis estático.
+Este proyecto consiste en un sistema de gestión de reservaciones basado en consola, diseñado para demostrar la implementación de abstracciones orientadas a objetos, persistencia de datos en archivos JSON y estándares de calidad de software mediante pruebas unitarias y análisis estático.
 
 ## 📌 Propósito del Ejercicio
 
@@ -55,7 +55,7 @@ coverage report -m
 
 ### 3. Análisis Estático (`Pylint` & `Flake8`)
 
-Para asegurar la adherencia a los estándares **PEP-8** mencionados por David Sale:
+Para asegurar la adherencia a los estándares **PEP-8** :
 
 ```bash
 # Verificar calidad del código (Meta: 10/10)
