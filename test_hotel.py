@@ -64,8 +64,8 @@ class TestHotelSystem(unittest.TestCase):
 
     def test_negative_delete_none(self):
         """Caso Negativo 1: Borrar ID inexistente."""
+        # Se elimina assertTrue(True) para corregir W1503
         Hotel.delete("9999")
-        self.assertTrue(True)
 
     def test_negative_invalid_json(self):
         """Caso Negativo 2: Archivo corrupto (Req 5)."""
@@ -83,8 +83,9 @@ class TestHotelSystem(unittest.TestCase):
 
     def test_negative_file_not_found(self):
         """Caso Negativo 4: Abrir archivo que no existe."""
+        # Se agrega encoding='utf-8' para corregir W1514
         with self.assertRaises(FileNotFoundError):
-            with open("ghost.json", "r") as f:
+            with open("ghost.json", "r", encoding='utf-8') as f:
                 json.load(f)
 
     def test_negative_null_reservation(self):
