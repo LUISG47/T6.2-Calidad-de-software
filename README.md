@@ -62,11 +62,12 @@ coverage report -m
 
 > **Resultado Actual:** 100% de cobertura en la lógica de negocio (`hotel.py`).
 
-Aqui se pueden ver los resultados de unitest y coverage hechos satisfactoriamente:
+Aqui se pueden ver los resultados de unitest y coverage hechos satisfactoriamente incluyendo pruebas con casos negativos:
 
-<img width="812" height="303" alt="Screenshot 2026-02-20 at 10 03 42 p m" src="https://github.com/user-attachments/assets/27ea9cc1-8b4f-48f5-9a6b-a16ca818fe05" />
 
 <img width="618" height="278" alt="Screenshot 2026-02-20 at 10 30 37 p m" src="https://github.com/user-attachments/assets/08339ef2-290c-426b-9d94-29b986ba2d45" />
+
+<img width="763" height="233" alt="Screenshot 2026-02-20 at 10 37 15 p m" src="https://github.com/user-attachments/assets/b7be27b3-6e2c-4beb-963a-0d560ff3d34b" />
 
 
 
