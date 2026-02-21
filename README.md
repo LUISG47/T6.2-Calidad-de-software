@@ -3,6 +3,10 @@
 
 # T6.2 Sistema de Reservaciones - Hotel Front Desk
 
+**A01105695**
+
+**José Luis Lorenzo Augusto Galíndez Vences**
+
 Este proyecto consiste en un sistema de gestión de reservaciones basado en consola, diseñado para demostrar la implementación de abstracciones orientadas a objetos, persistencia de datos en archivos JSON y estándares de calidad de software mediante pruebas unitarias y análisis estático.
 
 ## 📌 Propósito del Ejercicio
