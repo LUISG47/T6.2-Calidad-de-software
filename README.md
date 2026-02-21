@@ -17,6 +17,10 @@ El objetivo principal es aplicar los principios de **Gestión de Configuración 
 * **Persistencia:** Manejo de ciclo de vida de datos en almacenamiento físico.
 * **Verificación y Validación:** Uso de pruebas unitarias para alcanzar una cobertura superior al 85%.
 
+Aqui una muestra de la interfaz con la que se pueden crear los hoteles, reservaciones y clientes para hacer las pruebas:
+
+<img width="406" height="286" alt="Screenshot 2026-02-20 at 9 06 09 p m" src="https://github.com/user-attachments/assets/f4ec86fd-52a4-446f-9cad-81771dc49659" />
+
 ---
 
 ## 📂 Contenido del Repositorio
