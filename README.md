@@ -69,6 +69,13 @@ pylint hotel.py main.py
 flake8 hotel.py main.py
 
 ```
+Aqui se muestran los resultados de verificación con calificación de 10.0 para pylint y sin warnins en flake 8 para cada uno de los programas contenidos
+
+
+
+<img width="674" height="272" alt="Screenshot 2026-02-20 at 9 51 40 p m" src="https://github.com/user-attachments/assets/41bcf01d-2d57-49b8-9007-0e8ce2f94c09" />
+
+
 
 ---
 
