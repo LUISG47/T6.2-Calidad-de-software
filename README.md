@@ -91,7 +91,6 @@ Aqui se muestran los resultados de verificación con calificación de 10.0 para 
 
 
 
----
 
 ## ⚠️ Manejo de Errores (Req 5)
 
