@@ -96,3 +96,16 @@ El sistema está diseñado para ser robusto. Cualquier error en la entrada de da
 
 ---
 
+## 🏁 Conclusión 
+El desarrollo de este sistema de reservaciones ha servido como un ejercicio integral de Aseguramiento de Calidad (QA) y Gestión de Configuración de Software (SCM). A través de la implementación de pruebas unitarias robustas y el análisis estático de código, se han alcanzado los siguientes hitos:
+
++ Excelencia en Cobertura: Se logró un 100% de cobertura de código en el módulo de lógica de negocio (hotel.py), garantizando que cada método de persistencia y abstracción haya sido verificado rigurosamente.
+
++ Adherencia a Estándares: El proyecto mantiene una calificación de 10/10 en Pylint y cumplimiento total con PEP-8 (Flake8), asegurando un código limpio, legible y mantenible según las mejores prácticas de la industria.
+
++ Robustez y Continuidad: Gracias al manejo de excepciones implementado, el sistema demuestra resiliencia ante datos inválidos, cumpliendo con el objetivo de mantener la ejecución continua sin comprometer la integridad de la "base de datos" JSON.
+
++ Establecimiento de Línea Base: La generación de reportes en HTML y la automatización de pruebas permiten establecer una Línea Base (Baseline) confiable, facilitando futuras auditorías de configuración y trazabilidad de requerimientos.
+
+En conclusión, este ejercicio demuestra que la calidad no es un evento aislado, sino un proceso continuo de verificación y validación que transforma un simple script en una herramienta de software profesional y confiable.
+
