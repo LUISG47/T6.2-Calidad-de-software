@@ -1,7 +1,7 @@
 
 ---
 
-# Sistema de Reservaciones - Hotel Front Desk
+# T6.2 Sistema de Reservaciones - Hotel Front Desk
 
 Este proyecto consiste en un sistema de gestión de reservaciones basado en consola, diseñado para demostrar la implementación de abstracciones orientadas a objetos, persistencia de datos en archivos JSON y estándares de calidad de software mediante pruebas unitarias y análisis estático.
 
