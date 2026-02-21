@@ -1,6 +1,5 @@
 """
 Módulo de pruebas unitarias optimizado para hotel.py.
-Cumple con los estándares de David Sale y los requerimientos de la actividad.
 """
 import unittest
 import os
