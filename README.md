@@ -19,8 +19,6 @@ El objetivo principal es aplicar los principios de **Gestión de Configuración 
 
 Aqui una muestra de la interfaz con la que se pueden crear los hoteles, reservaciones y clientes para hacer las pruebas:
 
-<img width="406" height="286" alt="Screenshot 2026-02-20 at 9 06 09 p m" src="https://github.com/user-attachments/assets/f4ec86fd-52a4-446f-9cad-81771dc49659" />
-
 ---
 
 ## 📂 Contenido del Repositorio
@@ -30,6 +28,9 @@ Aqui una muestra de la interfaz con la que se pueden crear los hoteles, reservac
 | `hotel.py` | **Lógica de Negocio:** Contiene las clases `Hotel`, `Customer` y `Reservation` con sus métodos de persistencia (`save`, `delete`). |
 | `main.py` | **Interfaz de Usuario:** Implementa el menú interactivo y el manejo de excepciones para asegurar la continuidad del sistema (Req 5). |
 | `test_hotel.py` | **Suite de Pruebas:** Casos de prueba unitarios desarrollados con el módulo `unittest`, aplicando `setUp` y `tearDown` para aislamiento. |
+
+
+<img width="406" height="286" alt="Screenshot 2026-02-20 at 9 06 09 p m" src="https://github.com/user-attachments/assets/f4ec86fd-52a4-446f-9cad-81771dc49659" />
 
 ---
 
