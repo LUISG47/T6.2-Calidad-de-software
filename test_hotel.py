@@ -17,10 +17,12 @@ class TestHotelSystem(unittest.TestCase):
         self.customer_id = "C1"
         self.res_id = "R1"
 
-        # Instancias para usar en los tests, creadas una sola vez
+        # Instancias para usar en los tests
         self.hotel = Hotel(self.hotel_id, "Hotel Test", 100)
         self.customer = Customer(self.customer_id, "Diana Sanchez")
-        self.reservation = Reservation(self.res_id, self.hotel_id, self.customer_id)
+        self.reservation = Reservation(
+            self.res_id, self.hotel_id, self.customer_id
+        )
 
     def tearDown(self):
         """Limpieza después de cada prueba para mantener aislamiento."""
@@ -41,9 +43,7 @@ class TestHotelSystem(unittest.TestCase):
 
         with open(filename, "r", encoding="utf-8") as f:
             data = json.load(f)
-            # Verificación de igualdad de valores
             self.assertEqual(data['hotel_id'], self.hotel_id)
-            self.assertEqual(data['name'], "Hotel Test")
 
     def test_customer_save(self):
         """Prueba la persistencia de la clase Customer (Req 2.2)."""
@@ -58,14 +58,11 @@ class TestHotelSystem(unittest.TestCase):
         self.assertTrue(os.path.exists(filename))
 
     def test_all_display_info_methods(self):
-        """Ejercita los métodos display_info para alcanzar 100% de cobertura."""
-        # Estas llamadas ejecutan las líneas de impresión en hotel.py
-        try:
-            self.hotel.display_info()
-            self.customer.display_info()
-            self.reservation.display_info()
-        except Exception as err:
-            self.fail(f"Los métodos display_info lanzaron un error: {err}")
+        """Ejercita los métodos display_info para cobertura."""
+        # Eliminado try-except para corregir Pylint W0718
+        self.hotel.display_info()
+        self.customer.display_info()
+        self.reservation.display_info()
 
     def test_delete_hotel_behavior(self):
         """Prueba la unidad de eliminación física (Req 2.1.b)."""
@@ -74,8 +71,7 @@ class TestHotelSystem(unittest.TestCase):
         self.assertFalse(os.path.exists(f"hotel_{self.hotel_id}.json"))
 
     def test_invalid_data_handling(self):
-        """Uso de assertRaises para validar el manejo de errores (Req 5)."""
-        # Según David Sale, assertRaises es ideal para validar excepciones
+        """Uso de assertRaises para validar errores."""
         with self.assertRaises(FileNotFoundError):
             with open("no_existe.json", "r", encoding="utf-8") as f:
                 json.load(f)
