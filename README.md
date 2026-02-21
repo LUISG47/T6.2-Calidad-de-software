@@ -66,6 +66,8 @@ Aqui se pueden ver los resultados de unitest y coverage hechos satisfactoriament
 
 <img width="812" height="303" alt="Screenshot 2026-02-20 at 10 03 42 p m" src="https://github.com/user-attachments/assets/27ea9cc1-8b4f-48f5-9a6b-a16ca818fe05" />
 
+<img width="618" height="278" alt="Screenshot 2026-02-20 at 10 30 37 p m" src="https://github.com/user-attachments/assets/08339ef2-290c-426b-9d94-29b986ba2d45" />
+
 
 
 ### 3. Análisis Estático (`Pylint` & `Flake8`)
